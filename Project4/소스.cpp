@@ -46,7 +46,7 @@ void printList(linkedList_h* L) {
 }
 
 
-void insertFirstNode(linkedList_h *L, char* x) {
+void insertFirstNode(linkedList_h *L, const char* x) {
 	listNode* newNode;
 	newNode = (listNode*)malloc(sizeof(listNode));
 	strcpy(newNode->data, x);
@@ -73,7 +73,7 @@ void insertMiddleNode(linkedList_h *L, listNode* pre, char* x) {
 }
 
 
-void insertLastNode(linkedList_h* L, char* x) {
+void insertLastNode(linkedList_h* L, const char* x) {
 	listNode* newNode;
 	listNode* temp;
 	newNode = (listNode*)malloc(sizeof(listNode));
@@ -92,22 +92,22 @@ void insertLastNode(linkedList_h* L, char* x) {
 int main() {
 	linkedList_h* L;
 	L = createLinkedList_h();
-	printf("(1) °ø¹é ¸®½ºÆ® »ı¼ºÇÏ±â! \n");
+	printf("(1) ê³µë°± ë¦¬ìŠ¤íŠ¸ ìƒì„±í•˜ê¸°! \n");
 	printList(L); getchar();
 
-	printf("(2) ¸®½ºÆ®¿¡ [¼ö]³ëµå »ğÀÔÇÏ±â! \n");
-	insertFirstNode(L, "¼ö");
+	printf("(2) ë¦¬ìŠ¤íŠ¸ì— [ìˆ˜]ë…¸ë“œ ì‚½ì…í•˜ê¸°! \n");
+	insertFirstNode(L, "ìˆ˜");
 	printList(L); getchar();
 
-	printf("(3) ¸®½ºÆ® ¸¶Áö¸·¿¡ [±İ] ³ëµå »ğÀÔÇÏ±â! \n");
-	insertLastNode(L, "±İ");
+	printf("(3) ë¦¬ìŠ¤íŠ¸ ë§ˆì§€ë§‰ì— [ê¸ˆ] ë…¸ë“œ ì‚½ì…í•˜ê¸°! \n");
+	insertLastNode(L, "ê¸ˆ");
 	printList(L); getchar();
 
-	printf("(4) ¸®½ºÆ® Ã¹ ¹øÂ°¿¡ [¿ù] ³ëµå »ğÀÔÇÏ±â! \n");
-	insertFirstNode(L, "¿ù");
+	printf("(4) ë¦¬ìŠ¤íŠ¸ ì²« ë²ˆì§¸ì— [ì›”] ë…¸ë“œ ì‚½ì…í•˜ê¸°! \n");
+	insertFirstNode(L, "ì›”");
 	printList(L); getchar();
 
-	printf("(5) ¸®½ºÆ® °ø°£À» ÇØÁ¦ÇÏ¿© °ø¹é ¸®½ºÆ®·Î ¸¸µé±â! \n");
+	printf("(5) ë¦¬ìŠ¤íŠ¸ ê³µê°„ì„ í•´ì œí•˜ì—¬ ê³µë°± ë¦¬ìŠ¤íŠ¸ë¡œ ë§Œë“¤ê¸°! \n");
 	freeLinkedList_h(L);
 	printList(L);
 
